@@ -42,7 +42,7 @@ class trie
 {
 private:
   node *root;
-  queue<pair<string, string>> q; // queue to store prefixes of word present in input file along with word
+  queue<pair<string, string>> q; // queue to store sufixes of word whose prefixes are present in input file along with word
 
 public:
   trie()
@@ -101,7 +101,7 @@ public:
           ans[1] = complete_word;
       }
 
-      // if suffix not present in trie then store prefix of the current suffix in queue
+      // if suffix not present in trie then check for prefixes of the current suffix in trie and store new suffix
       else
       {
         node *temp = root;
